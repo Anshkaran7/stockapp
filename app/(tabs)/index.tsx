@@ -42,7 +42,6 @@ const StocksScreen: React.FC = () => {
     const fetchStocks = async () => {
       try {
         const response = await axios.get(`https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=demo`);
-        console.log('API response:', response.data);
 
         const gainersData = response.data.top_gainers?.map((item: any, index: number) => ({
           id: `${index + 1}`,
